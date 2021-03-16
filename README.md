@@ -12,9 +12,9 @@ public class tree {
     public static int  inorder(Node root){
         if(root==null)
              return -1;
-         preorder(root.left);
+         inorder(root.left);
          System.out.println(root.data);
-         preorder(root.right); 
+         inorder(root.right); 
          return 0;    
 }
 public static int  preorder(Node root){
@@ -31,7 +31,25 @@ public static int  postorder(Node root1){
     postorder(root1.left); 
     postorder(root1.right);
     System.out.println(root1.data); 
-     return 0;    
+    return 0;    
+}
+  public static void levelorder(Node root1){
+      LinkedList<Node> i=new LinkedList<Node>();
+      i.offerLast(root1);
+      while(!i.isEmpty()){
+        Node d=(Node)i.removeFirst();
+        System.out.println(d.data);
+        if(d.left!=null){
+
+            i.offerLast(d.left);
+
+        }
+        if(d.right!=null){
+             i.offerLast(d.right);
+        }
+       
+        
+    }
 }
     public static void main(String[] args) {
         Node root=new Node(20);

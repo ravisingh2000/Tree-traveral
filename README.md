@@ -50,7 +50,34 @@ public static int  postorder(Node root1){
        
         
     }
+    
 }
+ ##### public static boolean recursearch(Node root,int item) {             //bst search operation
+          if(root==null) return false;
+          if(root.data==item){
+               return true;
+          }
+          else if(root.data>item){
+                  return recursearch(root.left,item);
+          }
+          else{
+                  return recursearch(root.right,item);
+          }
+    }
+  ####   public static boolean itsearch(Node root,int item) {
+         while(root!=null){
+            if(root.data==item){
+                return true;
+           }
+           else if(root.data>item){
+                   root=root.left;
+           }
+           else{
+                   root=root.right;
+           }
+         }  
+        return false;
+    }
     public static void main(String[] args) {
         Node root=new Node(20);
         Node i=new Node(21);

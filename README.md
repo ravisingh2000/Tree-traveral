@@ -78,6 +78,25 @@ public static int  postorder(Node root1){
          }  
         return false;
     }
+   ####  public static int ceil(Node root,int item) {          //ceiling in bst
+        int res=Integer.MIN_VALUE;
+        while(root!=null){
+                if(root.data==item){
+                    return item;
+               }
+               else if(root.data>item){
+                if(res<root.data){
+                        res=root.data;
+                }       
+                       root=root.left;
+               }
+               else{
+                       
+                       root=root.right;
+               }
+             }   
+              return res; 
+      }
     public static void main(String[] args) {
         Node root=new Node(20);
         Node i=new Node(21);
@@ -101,3 +120,4 @@ public static int  postorder(Node root1){
     
     }
 }
+
